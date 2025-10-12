@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luna Open API</title>
     <link rel="stylesheet" href="CSS/styles.css">
+    <script src="js/api.js"></script>
     <script src="javaScript/main.js" defer></script>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#section1">Section 1</a></li>
-            <li><a href="#section2">Section 2</a></li>
-            <li><a href="#section3">Section 3</a></li>
+            <li><a href="#section1">Featured Artworks</a></li>
+            <li><a href="#section2">Search</a></li>
+            <li><a href="#section3">Random Art</a></li>
         </ul>
     </nav>  
     <header>
@@ -20,21 +21,30 @@
     </header>
     <main>
         <section id="section1">
-            <h2>Section 1</h2>
-            <p>This is the first section of the Luna Open API documentation.</p>
+            <h2>Featured Artworks</h2>
+            <div id="featured-gallery" class="artwork-grid"></div>
+            <p id="loading-featured">Loading featured artworks...</p>
         </section>
         <section id="section2">
-            <h2>Section 2</h2>
-            <p>This is the second section of the Luna Open API documentation.</p>
+            <h2>Search Artworks</h2>
+            <div class="search-form">
+                <input type="text" id="search-input" placeholder="Search for artworks, artists, or styles...">
+                <button id="search-btn">Search</button>
+            </div>
+            <div id="search-results" class="artwork-grid"></div>
+            <p id="no-results">No results found. Try a different search term.</p>
         </section>
         <section id="section3">
-            <h2>Section 3</h2>
-            <p>This is the third section of the Luna Open API documentation.</p>
+            <h2>Discover Random Artwork</h2>
+            <button id="random-btn">Show Me Art!</button>
+            <div id="random-artwork" class="single-artwork"></div>
+        </section>
+        <section id="portfolio-link">
+            <a href="../mia-smith-luna/index.html" class="portfolio-btn">← Back to Portfolio</a>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Luna Open API. All rights reserved.</p>
     </footer>
-    <script src="js/api.js"></script>
 </body>
 </html>
