@@ -35,6 +35,14 @@
     h1 {
         text-align: center;
     }
+    
+    #section2 {
+        text-align: center;
+    }
+    
+    #section3 h2 {
+        text-align: center;
+    }
          
     main {       
         padding: 20px;   
@@ -97,7 +105,7 @@
     .search-form {
         display: flex;
         gap: 10px;
-        margin: 20px 0;
+        margin: 20px auto;
         max-width: 600px;
     }
 
