@@ -236,11 +236,7 @@
         margin-top: 40px;
     }
 
-    #portfolio-button-link {
-        text-decoration: none;
-    }
-
-    #portfolio-button-link button {
+    #portfolio-button {
         background-color: #007cba;
         color: white;
         padding: 15px 30px;
@@ -249,9 +245,10 @@
         border: none;
         border-radius: 5px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
+        transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    #portfolio-button-link button:hover {
+    #portfolio-button:hover {
         background-color: #005a87;
+        transform: translateY(-2px);
     }
