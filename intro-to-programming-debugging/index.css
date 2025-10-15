@@ -1,0 +1,46 @@
+/**
+ * Number Guessing Game - Stylesheet
+ * 
+ * This CSS file provides styling for the guessing game,
+ * creating a centered, clean layout for the game interface.
+ */
+
+/* ========================================
+   MAIN CONTAINER LAYOUT
+   ======================================== */
+
+/* 
+ * Centers all game content vertically and horizontally on the page
+ * Uses Flexbox for easy centering and column layout
+ */
+main {
+  display: flex;              /* Enable flexbox layout */
+  justify-content: center;    /* Center content vertically in the flex container */
+  flex-direction: column;     /* Stack items vertically (top to bottom) */
+  align-items: center;        /* Center content horizontally */
+  margin: auto;               /* Center the main element itself on the page */
+}
+
+/* ========================================
+   INPUT FIELD STYLING
+   ======================================== */
+
+/* 
+ * Sets a fixed width for the number input field
+ * This prevents the input from being too wide for a 2-digit number
+ */
+#guess {
+  width: 5em;  /* 5 times the font size - enough space for 2 digits plus padding */
+}
+
+/* ========================================
+   BUTTON STYLING
+   ======================================== */
+
+/* 
+ * Adds spacing around the reset button
+ * This prevents it from being too close to other elements
+ */
+#reset {
+  margin: 20px;  /* 20 pixels of space on all sides */
+}
