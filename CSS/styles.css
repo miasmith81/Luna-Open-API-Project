@@ -272,3 +272,483 @@
         background-color: #005a87;
         transform: translateY(-2px);
     }
+
+/* ============================================
+   RESPONSIVE DESIGN - MOBILE FIRST APPROACH
+   Base styles are for mobile (< 576px)
+   Maintaining sticky navigation from original
+   ============================================ */
+
+/* Ensure sticky nav is maintained on mobile */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Maintain body padding for fixed nav */
+body {
+    margin: 0;
+    padding-top: 50px; /* Account for fixed nav height */
+    padding-bottom: 60px;
+    font-family: Arial, sans-serif;
+}
+
+/* Ensure mobile-first base styles */
+.artwork-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+}
+
+.search-form {
+    flex-direction: column; /* Stack search elements vertically on mobile */
+}
+
+#search-input, #search-btn {
+    width: 100%; /* Full width on mobile */
+}
+
+/* Mobile-specific nav adjustments */
+nav ul {
+    flex-direction: column; /* Stack nav items on smallest screens */
+    gap: 10px;
+}
+
+.single-artwork {
+    padding: 15px; /* Reduce padding on mobile */
+    margin: 10px; /* Add small margin on mobile */
+}
+
+/* ============================================
+   Small devices (landscape phones, 576px and up)
+   ============================================ */
+@media (min-width: 576px) {
+    /* Navigation - maintain sticky with horizontal layout */
+    nav {
+        position: fixed; /* Ensure sticky */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 10px;
+    }
+    
+    /* Adjust body padding if needed */
+    body {
+        padding-top: 50px; /* Maintain space for fixed nav */
+    }
+    
+    /* Navigation improvements */
+    nav ul {
+        flex-direction: row; /* Horizontal nav on larger screens */
+        gap: 20px;
+    }
+    
+    /* Artwork grid - 2 columns */
+    .artwork-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    /* Search form - side by side */
+    .search-form {
+        flex-direction: row;
+        max-width: 500px;
+    }
+    
+    #search-input {
+        flex: 1;
+        width: auto;
+    }
+    
+    #search-btn {
+        width: auto;
+        min-width: 100px;
+    }
+    
+    /* Single artwork container */
+    .single-artwork {
+        padding: 20px;
+        margin: 15px auto;
+        max-width: 540px;
+    }
+    
+    /* Main content area */
+    main {
+        padding: 20px;
+    }
+    
+    /* Buttons */
+    #random-btn, #portfolio-button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
+
+/* ============================================
+   Medium devices (tablets, 768px and up)
+   ============================================ */
+@media (min-width: 768px) {
+    /* Navigation - maintain sticky with more padding */
+    nav {
+        position: fixed; /* Ensure sticky */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 12px;
+    }
+    
+    /* Adjust body padding for potentially taller nav */
+    body {
+        padding-top: 55px; /* Slightly more space for larger nav */
+    }
+    
+    /* Navigation */
+    nav ul {
+        gap: 30px;
+    }
+    
+    nav a {
+        padding: 10px 20px;
+    }
+    
+    /* Artwork grid - 3 columns */
+    .artwork-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    /* Artwork cards */
+    .artwork-card {
+        padding: 18px;
+    }
+    
+    .artwork-card img {
+        height: 220px;
+    }
+    
+    /* Search form */
+    .search-form {
+        max-width: 600px;
+        gap: 12px;
+    }
+    
+    #search-input {
+        padding: 14px;
+        font-size: 16px;
+    }
+    
+    #search-btn {
+        padding: 14px 28px;
+        font-size: 16px;
+    }
+    
+    /* Single artwork */
+    .single-artwork {
+        max-width: 650px;
+        padding: 25px;
+        margin: 20px auto;
+    }
+    
+    /* Random button */
+    #random-btn {
+        padding: 15px 30px;
+        font-size: 17px;
+    }
+    
+    /* Main content */
+    main {
+        padding: 30px;
+    }
+    
+    /* Headers */
+    h1 {
+        font-size: 2em;
+        margin: 30px 0;
+    }
+    
+    h2 {
+        font-size: 1.6em;
+        margin: 25px 0;
+    }
+}
+
+/* ============================================
+   Large devices (desktops, 1024px and up)
+   ============================================ */
+@media (min-width: 1024px) {
+    /* Navigation - maintain sticky with desktop styling */
+    nav {
+        position: fixed; /* Ensure sticky */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Enhanced shadow for desktop */
+    }
+    
+    /* Adjust body padding for larger nav */
+    body {
+        padding-top: 60px; /* More space for larger desktop nav */
+    }
+    
+    /* Navigation */
+    nav ul {
+        gap: 40px;
+    }
+    
+    nav a {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    /* Artwork grid - 4 columns */
+    .artwork-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+    
+    /* Artwork cards */
+    .artwork-card {
+        padding: 20px;
+    }
+    
+    .artwork-card img {
+        height: 250px;
+    }
+    
+    .artwork-title {
+        font-size: 17px;
+    }
+    
+    .artwork-artist {
+        font-size: 15px;
+    }
+    
+    /* Search form */
+    .search-form {
+        max-width: 700px;
+        gap: 15px;
+    }
+    
+    #search-input {
+        padding: 15px;
+        font-size: 17px;
+    }
+    
+    #search-btn {
+        padding: 15px 35px;
+        font-size: 17px;
+    }
+    
+    /* Single artwork */
+    .single-artwork {
+        max-width: 750px;
+        padding: 30px;
+        margin: 25px auto;
+    }
+    
+    /* Random button */
+    #random-btn {
+        padding: 18px 35px;
+        font-size: 18px;
+    }
+    
+    /* Portfolio button */
+    #portfolio-button {
+        padding: 18px 35px;
+        font-size: 19px;
+    }
+    
+    /* Main content */
+    main {
+        padding: 40px;
+        max-width: 1200px;
+    }
+    
+    /* Section spacing */
+    section {
+        margin-bottom: 60px;
+    }
+}
+
+/* ============================================
+   Extra large devices (large desktops, 1440px and up)
+   ============================================ */
+@media (min-width: 1440px) {
+    /* Navigation - maintain sticky with luxury spacing */
+    nav {
+        position: fixed; /* Ensure sticky */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 18px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Adjust body padding for larger nav */
+    body {
+        padding-top: 65px; /* Account for larger nav height */
+    }
+    
+    /* Navigation */
+    nav ul {
+        gap: 50px;
+    }
+    
+    nav a {
+        padding: 12px 28px;
+        font-size: 17px;
+    }
+    
+    /* Main container */
+    main {
+        max-width: 1400px;
+        padding: 50px;
+    }
+    
+    /* Artwork grid - 5 columns for extra large screens */
+    .artwork-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px;
+    }
+    
+    /* Artwork cards */
+    .artwork-card {
+        padding: 22px;
+    }
+    
+    .artwork-card img {
+        height: 280px;
+    }
+    
+    /* Search form */
+    .search-form {
+        max-width: 800px;
+        gap: 20px;
+    }
+    
+    #search-input {
+        padding: 16px 20px;
+        font-size: 18px;
+    }
+    
+    #search-btn {
+        padding: 16px 40px;
+        font-size: 18px;
+    }
+    
+    /* Single artwork */
+    .single-artwork {
+        max-width: 900px;
+        padding: 40px;
+        margin: 30px auto;
+    }
+    
+    .single-artwork img {
+        max-height: 600px;
+        width: auto;
+        margin: 0 auto 20px;
+        display: block;
+    }
+    
+    /* Buttons */
+    #random-btn, #portfolio-button {
+        padding: 20px 45px;
+        font-size: 20px;
+    }
+    
+    /* Typography */
+    h1 {
+        font-size: 2.5em;
+        margin: 40px 0;
+    }
+    
+    h2 {
+        font-size: 2em;
+        margin: 35px 0;
+    }
+    
+    /* Section spacing */
+    section {
+        margin-bottom: 80px;
+    }
+    
+    /* Footer - ensure it stays at bottom */
+    footer {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+/* ============================================
+   Additional Responsive Utilities
+   ============================================ */
+
+/* Ensure sections have padding to account for fixed nav when scrolling */
+section {
+    scroll-margin-top: 60px; /* Offset for fixed nav */
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Prevent horizontal scroll on small devices */
+* {
+    box-sizing: border-box;
+}
+
+/* Smooth scrolling for all devices */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Touch-friendly tap targets */
+@media (hover: none) and (pointer: coarse) {
+    button, a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Adjust scroll offset for different screen sizes */
+@media (min-width: 768px) {
+    section {
+        scroll-margin-top: 65px;
+    }
+}
+
+@media (min-width: 1024px) {
+    section {
+        scroll-margin-top: 70px;
+    }
+}
+
+@media (min-width: 1440px) {
+    section {
+        scroll-margin-top: 75px;
+    }
+}
+
+/* Print styles (bonus) */
+@media print {
+    nav, footer, #portfolio-section {
+        display: none;
+    }
+    
+    .artwork-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
